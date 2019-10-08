@@ -10,9 +10,22 @@ function ask(questionText) {
 start();
 
 async function start() {
-  console.log("Let's play a game where you (human) make up a number and I (computer) try to guess it.")
-  let secretNumber = await ask("What is your secret number?\nI won't peek, I promise...\n");
-  console.log('You entered: ' + secretNumber);
-  // Now try and complete the program.
-  process.exit();
-}
+
+  console.log("Let's play a game where you (human) make up a number and I (computer) try to guess it.");
+  const min = 1;
+  const max = 100;
+  const guess = (Math.floor(Math.random() * (max - min + 1)) + min);
+  humanResponse = ("");
+  
+  let compQuestion = await ask("Is your secret number: " + guess + "?" + "\n(Y)es or (N)o \n"); {
+  
+  console.log(compQuestion);
+    while (compQuestion = await ask("Is your secret number: " + guess + "?" + "\n(Y)es or (N)o \n")) { 
+        if (humanResponse = await ask("Is it ... " + guess + "?")) {
+            return console.log(compQuestion);
+         } else {
+            return console.log("I did it! I did it! Computers rule and humans drool.");   
+            }
+          } process.exit();
+        }
+      }
